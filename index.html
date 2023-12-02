@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Planner Recommendations</title>
+    <!-- Include any CSS or other necessary scripts here -->
+</head>
+<body>
+    <h1>Welcome to the Wedding Planner Recommendations</h1>
+    
+    <button id="getRecommendationsBtn">Get Recommendations</button>
+
+    <!-- JavaScript to handle button click and fetch recommendations -->
+    <script>
+        document.getElementById('getRecommendationsBtn').addEventListener('click', function() {
+            var userId = 123; // Replace with the actual user ID
+            var url = 'get_recommendations.php?user_id=' + userId;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Received recommendations:', data);
+                    // Update the UI to display recommendations on the page
+                    // Example: You can create HTML elements dynamically to show recommendations
+                })
+                .catch(error => {
+                    console.error('Error fetching recommendations:', error);
+                });
+        });
+    </script>
+</body>
+</html>
